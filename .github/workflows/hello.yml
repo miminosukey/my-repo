@@ -6,7 +6,7 @@ jobs:
     steps:
       - run: echo "Hello, world"
       - run: ls
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
       - run: pwd
       - run: ls
       # - name: secret test
