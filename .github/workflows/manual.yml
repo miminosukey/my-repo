@@ -7,8 +7,16 @@ on:
         default: Hello
         required: true
         description: A cheerful word
+      log-level:
+        type: choice
+        options:
+          - info
+          - warn
+          - error
+
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
       - run: echo "${{ inputs.greeting }}"  # 入力パラメータ「greeting」の参照
+      - run: echo "${{ inputs.log-level }}"
