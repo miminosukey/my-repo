@@ -18,5 +18,5 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.TEST_SECRET }}
         run: |
-          echo "$SUPER_SECRET" < test.txt
+          echo "$SUPER_SECRET" > test.txt
           cat test.txt
