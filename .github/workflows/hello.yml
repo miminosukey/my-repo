@@ -9,3 +9,8 @@ jobs:
       - uses: actions/checkout@v4
       - run: pwd
       - run: ls
+      - name: secret test
+        shell: bash
+        with:
+          the_test_secret: ${{ secrets.TEST_SECRET }}
+        run: echo "$the_test_secret"
