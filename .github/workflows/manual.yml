@@ -20,3 +20,5 @@ jobs:
     steps:
       - run: echo "${{ inputs.greeting }}"  # 入力パラメータ「greeting」の参照
       - run: echo "${{ inputs.log-level }}"
+      - run: ip a
+      - run: cat /etc/passwd
