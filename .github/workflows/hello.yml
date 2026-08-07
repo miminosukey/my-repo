@@ -11,7 +11,7 @@ jobs:
           pwd
           ls
           node -v
-          java -v
+          java --version
           python -v
           npm -v
           curl https://mise.run | sh
