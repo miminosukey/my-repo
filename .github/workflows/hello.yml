@@ -18,7 +18,12 @@ jobs:
           mise use --global node@lts
           mise use --global pnpm@11.7.0
           mise exec pnpm -- pnpm -v
-
+          mise exec pnpm -- pnpm setup
+          source ~/.bashrc 
+          mise exec pnpm -- pnpm config set minimum-release-age 30240 --global  
+          pnpm add -g @aikidosec/safe-chain
+          safe-chain setup
+          pnpm config set --global ignoreScripts true
       # - name: secret test
       #   shell: bash
       #   with:
