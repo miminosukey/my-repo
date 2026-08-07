@@ -7,16 +7,20 @@ jobs:
       - run: echo "Hello, world"
       - run: ls
       - uses: actions/checkout@v7.0.1
-      - run: pwd
-      - run: ls
+      - run: |
+          pwd
+          ls
+          node -v
+          java -v
+          python -v
+          npm -v
+          curl https://mise.run | sh
+          mise use --global node@lts
+          mise use --global pnpm@11.7.0
+          mise exec pnpm -- pnpm -v
+
       # - name: secret test
       #   shell: bash
       #   with:
       #     the_test_secret: ${{ secrets.TEST_SECRET }}
       #   run: echo "$the_test_secret"
-      - shell: bash
-        env:
-          SUPER_SECRET: ${{ secrets.TEST_SECRET }}
-        run: |
-          echo "$SUPER_SECRET" > test.txt
-          cat test.txt
